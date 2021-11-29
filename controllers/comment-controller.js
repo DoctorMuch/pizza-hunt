@@ -22,7 +22,7 @@ const commentController = {
   },
 
   removeComment({ params }, res) {
-    Comment.findOneAndDelete({ _id: params.id })
+    Comment.findOneAndDelete({ _id: params.commentId })
       .then(deletedComment => {
         if (!deletedComment) {
           return res.status(404).json({ message: 'No such comment was found!' });
